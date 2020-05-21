@@ -28,7 +28,7 @@ cc.Class({
 
     onLoad () {
         cc.director.getPhysicsManager().enabled = true; // 开启物理引擎
-        cc.director.getPhysicsManager().gravity = cc.v2(0, 0);
+        cc.director.getPhysicsManager().gravity = cc.v2(0, -320);
 
         cc.view.enableRetina(true) ;
         cc.view.resizeWithBrowserSize(true);

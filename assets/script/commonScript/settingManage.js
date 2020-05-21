@@ -14,12 +14,6 @@ cc.Class({
     },
 
     onLoad () {
-        console.log("settingManage onload")
-        cc.director.getPhysicsManager().enabled = true; // 开启物理引擎
-        cc.director.getPhysicsManager().gravity = cc.v2(0, 0);
-
-        cc.view.enableRetina(true) ;
-        cc.view.resizeWithBrowserSize(true);
 
     },
 
