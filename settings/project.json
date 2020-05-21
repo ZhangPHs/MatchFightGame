@@ -3,7 +3,7 @@
     "default",
     "wall",
     "role",
-    "button"
+    "UI"
   ],
   "collision-matrix": [
     [
@@ -92,6 +92,5 @@
       "enable": false
     }
   },
-  "migrate-history": [],
-  "start-scene": "current"
+  "migrate-history": []
 }
