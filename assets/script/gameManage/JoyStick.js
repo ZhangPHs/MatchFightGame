@@ -77,7 +77,7 @@ cc.Class({
         }
 
         // move Player
-        let dis = this.dir.mul(this.maxSpeed * ratio*700);
+        let dis = this.dir.mul(this.maxSpeed * ratio*1500);
         
         //对球的处理
         this.ball_body = this.ball.getComponent(cc.RigidBody)
