@@ -24,6 +24,11 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        ball: {
+            default: null,
+            type: cc.Node
+        },
+        maxSpeed: 10,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -34,5 +39,7 @@ cc.Class({
 
     },
 
-    // update (dt) {},
+    update (dt) {
+
+    },
 });

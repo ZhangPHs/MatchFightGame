@@ -9,14 +9,25 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        role: cc.Node,
-        enemy: cc.Node,
-        edge: cc.Node,
+        role: {
+            type: cc.Node,
+            default: null
+        },
+        enemy: {
+            type: cc.Node,
+            default: null
+        },
+        edge: {
+            type: cc.Node,
+            default: null
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        console.log("this mainCamera onload")
+    },
 
     start () {               
     },
