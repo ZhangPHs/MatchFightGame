@@ -53,7 +53,7 @@ cc.Class({
         }
         cc.loader.loadRes(file,cc.AudioClip,(err,clip)=>{
             this.bgmAudio = clip
-            this.bgmAudioId = cc.audioEngine.play(this.bgmAudio, true, 0.5)
+            cc.audioEngine.play(this.bgmAudio, true, 0.3)
         })
         
     },
@@ -79,7 +79,7 @@ cc.Class({
         }
         cc.loader.loadRes(file,cc.AudioClip,(err,clip)=>{
             this.soundAudio = clip
-            this.soundAudioId = cc.audioEngine.play(this.soundAudio, false, 0.5)
+            cc.audioEngine.play(this.soundAudio, false, 1)
         })
     },
 
