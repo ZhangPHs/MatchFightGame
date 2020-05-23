@@ -24,19 +24,20 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        console.log(" audioManage onload")
+        console.log("audioManage onload")
         this.bgmStop()
         this.bgmPlay()
     },
 
     bgmStop(){
         console.log("stop")
-        cc.audioEngine.stop(this.bgmAudioId)
+        cc.audioEngine.stopAll()
     },
 
     bgmPlay(){
         // 这里由于回调函数的缘故，掺入了播放功能。
         var file = ""
+        console.log(this.bgmAudioId)
         switch(this.bgmAudioId){
             case 1:
                 file = "bgm/bgm1"
