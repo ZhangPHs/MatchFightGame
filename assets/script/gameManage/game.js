@@ -9,21 +9,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+        gameOverLabel: cc.Node,
     },
 
     onLoad () {
@@ -32,10 +18,26 @@ cc.Class({
 
         cc.view.enableRetina(true) ;
         cc.view.resizeWithBrowserSize(true);
+
+        // 只影响定时器的时间间隔
+        // cc.director.getScheduler().setTimeScale(0.01);
     },
 
     start () {
+        this.GameOverControll();
+    },
 
+    // 当游戏执行时执行的函数
+    GameOverControll() {
+        // 游戏暂停，但文本动画也会暂停
+        // cc.director.pause();
+        this.gameOverLabel.active = true;
+        let label  = this.gameOverLabel.getComponent(cc.Label);
+        label.string = "You Win!";
+        label.schedule(function() {
+            label.fontSize++;
+            console.log("font size ++");
+        }, 0.01, 20);
     },
 
     // update (dt) {},
