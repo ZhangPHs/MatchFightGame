@@ -19,17 +19,17 @@ cc.Class({
 
     onBeginContact (contact, selfCollider, otherCollider) {
         if(otherCollider.node.group == "enemy"){
-            switch(selfCollider.node._name) {
+            switch(selfCollider.node.name) {
                 case "头":
-                    switch(otherCollider.node._name) {
+                    switch(otherCollider.node.name) {
                         case "头":
-                            console.log("twoHeadHit");
+//                            console.log("twoHeadHit");
                             this.twoHeadHit(this.selfNode, this.enemyNode, contact, selfCollider, otherCollider);
                             break;
                         case "躯干":
                         case "小肚子":
                         case "骻":
-                            console.log("headHitBody");
+//                            console.log("headHitBody");
                             this.headHitBody(this.selfNode, this.enemyNode, contact, selfCollider, otherCollider);
                             break;
                         case "左手":
@@ -41,16 +41,15 @@ cc.Class({
                         case "左腿前":
                         case "右腿":
                         case "右腿前":
-                            console.log(contact);
-                            console.log("headGetHit");
-                            this.headGetHit(this.enemyNode, this.selfNode, contact, selfCollider, otherCollider);
+//                            console.log("headGetHit");
+                            this.headGetHit(this.selfNode, this.enemyNode, contact, selfCollider, otherCollider);
                             break;
                     }
                     break;
                 case "躯干":
                 case "小肚子":
                 case "骻":
-                    switch(otherCollider.node._name) {
+                    switch(otherCollider.node.name) {
                         case "头":
                             this.headHitBody(this.enemyNode, this.selfNode, contact, selfCollider, otherCollider);
                             break;
@@ -81,7 +80,7 @@ cc.Class({
                 case "左腿前":
                 case "右腿":
                 case "右腿前":
-                    switch(otherCollider.node._name) {
+                    switch(otherCollider.node.name) {
                         case "头":
                             this.headGetHit(this.enemyNode, this.selfNode, contact, selfCollider, otherCollider);
                             break;
@@ -105,6 +104,7 @@ cc.Class({
                     break;
             }
         }
+        this.gameoverTrigger()
     },
 
     // 两个头相撞
@@ -113,9 +113,9 @@ cc.Class({
         cc.find("dataN").getComponent("audioManage").soundPlay();
 
         // 处理碰撞血量，下同
-        selfNode.getComponent("attribute").HP -= UnitHP * 3;
-        otherNode.getComponent("attribute").HP -= UnitHP * 3;
-        console.log(selfNode.getComponent("attribute").HP, otherNode.getComponent("attribute").HP)
+        selfNode.getComponent("attribute").HP -= UnitHP;
+        otherNode.getComponent("attribute").HP -= UnitHP;
+//        console.log(selfNode.getComponent("attribute").HP, otherNode.getComponent("attribute").HP)
 
         // 处理碰撞作用力，下同
         let worldManifold = contact.getWorldManifold();
@@ -157,8 +157,8 @@ cc.Class({
         
         // 处理碰撞血量，下同
         headNode.getComponent("attribute").HP -= UnitHP * 0;
-        bodyNode.getComponent("attribute").HP -= UnitHP * 2;
-        console.log(headNode.getComponent("attribute").HP, bodyNode.getComponent("attribute").HP)
+        bodyNode.getComponent("attribute").HP -= UnitHP * 1;
+//        console.log(headNode.getComponent("attribute").HP, bodyNode.getComponent("attribute").HP)
         
         // 处理碰撞作用力，下同
         let worldManifold = contact.getWorldManifold();
@@ -174,9 +174,9 @@ cc.Class({
         cc.find("dataN").getComponent("audioManage").soundPlay();
 
         // 处理碰撞血量，下同
-        headNode.getComponent("attribute").HP -= UnitHP * 3;
+        headNode.getComponent("attribute").HP -= UnitHP * 1;
         limbNode.getComponent("attribute").HP -= UnitHP * 0;
-        console.log(headNode.getComponent("attribute").HP, limbNode.getComponent("attribute").HP)
+//        console.log(headNode.getComponent("attribute").HP, limbNode.getComponent("attribute").HP)
 
         // 处理碰撞作用力，下同
         let worldManifold = contact.getWorldManifold();
@@ -192,9 +192,9 @@ cc.Class({
         cc.find("dataN").getComponent("audioManage").soundPlay();
         
         // 处理碰撞血量，下同
-        selfNode.getComponent("attribute").HP -= UnitHP * 2;
-        otherNode.getComponent("attribute").HP -= UnitHP * 2;
-        console.log(selfNode.getComponent("attribute").HP, otherNode.getComponent("attribute").HP)
+        selfNode.getComponent("attribute").HP -= UnitHP;
+        otherNode.getComponent("attribute").HP -= UnitHP;
+//        console.log(selfNode.getComponent("attribute").HP, otherNode.getComponent("attribute").HP)
 
         // 处理碰撞作用力，下同
         let worldManifold = contact.getWorldManifold();
@@ -210,9 +210,9 @@ cc.Class({
         cc.find("dataN").getComponent("audioManage").soundPlay();
                 
         // 处理碰撞血量，下同
-        bodyNode.getComponent("attribute").HP -= 0;
-        limbNode.getComponent("attribute").HP -= UnitHP;
-        console.log(bodyNode.getComponent("attribute").HP, limbNode.getComponent("attribute").HP)
+        bodyNode.getComponent("attribute").HP -= UnitHP * 2;
+        limbNode.getComponent("attribute").HP -= 0;
+//        console.log(bodyNode.getComponent("attribute").HP, limbNode.getComponent("attribute").HP)
 
         // 处理碰撞作用力，下同
         let worldManifold = contact.getWorldManifold();
@@ -230,7 +230,7 @@ cc.Class({
         // 处理碰撞血量，下同
         selfNode.getComponent("attribute").HP -= 0;
         otherNode.getComponent("attribute").HP -= 0;
-        console.log(selfNode.getComponent("attribute").HP, otherNode.getComponent("attribute").HP)
+//        console.log(selfNode.getComponent("attribute").HP, otherNode.getComponent("attribute").HP)
 
         // 处理碰撞作用力，下同
         let worldManifold = contact.getWorldManifold();
@@ -240,5 +240,21 @@ cc.Class({
         otherCollider.body.applyLinearImpulse(cc.v2(normal.x * 3500, normal.y * 3500), cc.v2(points[0].x, points[0].y), true);
     },
 
+    gameoverTrigger(){
+        let playerHP = this.selfNode.getComponent("attribute").HP
+        let enemyHP = this.enemyNode.getComponent("attribute").HP
+//        console.log(playerHP,enemyHP)
+//      观察己方和敌方血量
+        let event
+        if(playerHP <= 0){
+            event = new cc.Event.EventCustom('judgeGameOver',true)
+            event.setUserData(false)
+            this.node.dispatchEvent(event)
+        }else if(enemyHP <= 0){    
+            event = new cc.Event.EventCustom('judgeGameOver',true)
+            event.setUserData(true)
+            this.node.dispatchEvent(event)
+        }
+    }
     // update (dt) {},
 });
