@@ -24,13 +24,11 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        console.log("audioManage onload")
         this.bgmStop()
         this.bgmPlay()
     },
 
     bgmStop(){
-        console.log("stop")
         cc.audioEngine.stopAll()
     },
 
@@ -126,14 +124,6 @@ cc.Class({
         this.soundPlay()
     },
 
-    start () {
-        console.log("start")
-
-    },
-
     // update (dt) {},
 
-    onDestroy(){
-        //this.player.bgmStop()
-    }
 });
