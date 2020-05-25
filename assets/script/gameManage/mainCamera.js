@@ -26,7 +26,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        console.log("this mainCamera onload")
+        //console.log("this mainCamera onload")
     },
 
     start () {               

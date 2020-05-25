@@ -36,7 +36,6 @@ cc.Class({
         label.string = "You Win!";
         label.schedule(function() {
             label.fontSize++;
-            console.log("font size ++");
         }, 0.01, 20);
     },
 

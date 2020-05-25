@@ -82,6 +82,5 @@ cc.Class({
         //对球的处理
         this.ball_body = this.ball.getComponent(cc.RigidBody)
         this.ball_body.applyForceToCenter(dis)
-        console.log(this.ball_body.gravityScale)
     },
 });
