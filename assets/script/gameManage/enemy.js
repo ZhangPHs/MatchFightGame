@@ -75,9 +75,9 @@ cc.Class({
 
         let ratio = 25
 
-        dir = cc.v2(pos.x-epos.x, pos.y-epos.y).mulSelf(ratio)
+        this.dir = cc.v2(pos.x-epos.x, pos.y-epos.y).mulSelf(ratio)
 
-        enemybody.applyForce(dir, pos)
+        enemybody.applyForce(this.dir, pos)
         console.log("make attack")
     },
 
@@ -90,9 +90,9 @@ cc.Class({
 
         let ratio = 25
 
-        dir = cc.v2(epos.x - pos.x, epos.y - pos.y).mulSelf(ratio)
+        this.dir = cc.v2(epos.x - pos.x, epos.y - pos.y).mulSelf(ratio)
 
-        enemybody.applyForce(dir, pos)
+        enemybody.applyForce(this.dir, pos)
         console.log("make back")
     },
     update (dt) {
