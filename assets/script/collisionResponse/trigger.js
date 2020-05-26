@@ -1,3 +1,5 @@
+// 此节点挂载人偶可以碰撞的各个身体部位，用于记录碰撞触发
+
 const UnitHP = 8;
 
 cc.Class({
@@ -6,6 +8,7 @@ cc.Class({
     properties: {
         selfNode : cc.Node,
         enemyNode : cc.Node,
+        flag: true
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -17,7 +20,10 @@ cc.Class({
 
     },
 
-    onBeginContact (contact, selfCollider, otherCollider) {
+
+    onBeginContact (contact, selfCollider, otherCollider) {        
+        //该函数为刚体与刚体碰撞时调用，参数为己方刚体和地方刚体  
+        //不同部位碰撞有不同反馈  
         if(otherCollider.node.group == "enemy"){
             switch(selfCollider.node.name) {
                 case "头":
@@ -241,19 +247,23 @@ cc.Class({
     },
 
     gameoverTrigger(){
+        // 该函数于碰撞检测函数onbegincontact中调用。用于判定当前HP是否游戏结束，若结束则派送事件
+        if(this.flag == false) return
         let playerHP = this.selfNode.getComponent("attribute").HP
         let enemyHP = this.enemyNode.getComponent("attribute").HP
 //        console.log(playerHP,enemyHP)
 //      观察己方和敌方血量
         let event
         if(playerHP <= 0){
-            event = new cc.Event.EventCustom('judgeGameOver',true)
-            event.setUserData(false)
+            event = new cc.Event.EventCustom('judgeGameOver',true)  // 通过cc.Event.EventCustom对象来传递事件
+            event.setUserData(false)                                // player胜利，则发送data为false
             this.node.dispatchEvent(event)
+            this.flag = false
         }else if(enemyHP <= 0){    
             event = new cc.Event.EventCustom('judgeGameOver',true)
             event.setUserData(true)
             this.node.dispatchEvent(event)
+            this.flag = false
         }
     },
 

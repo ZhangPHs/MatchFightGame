@@ -1,10 +1,5 @@
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
+// 该脚本绑于常驻节点，记录当前播放的bgm和碰撞音效
+// 播放的音频由properties中的各自的ID决定！！！
 cc.Class({
     extends: cc.Component,
 
@@ -33,6 +28,7 @@ cc.Class({
     },
 
     bgmPlay(){
+        // 播放BGM函数
         // 这里由于回调函数的缘故，掺入了播放功能。
         var file = ""
         switch(this.bgmAudioId){
@@ -49,14 +45,17 @@ cc.Class({
                 this.bgmAudio = null
                 return;
         }
+        let _this = this
         cc.loader.loadRes(file,cc.AudioClip,(err,clip)=>{
-            this.bgmAudio = clip
-            cc.audioEngine.play(this.bgmAudio, true, 0.3)
+            // 加载对应资源，并在回调函数中进行播放
+            _this.bgmAudio = clip
+            cc.audioEngine.play(_this.bgmAudio, true, 0.3)
         })
         
     },
 
     soundPlay(){
+        // 播放碰撞音效函数
         var file = ""
         switch(this.soundAudioId){
             case 1:
@@ -75,13 +74,15 @@ cc.Class({
                 this.soundAudio = null
                 return;
         }
+        let _this = this
         cc.loader.loadRes(file,cc.AudioClip,(err,clip)=>{
-            this.soundAudio = clip
-            cc.audioEngine.play(this.soundAudio, false, 1)
+            _this.soundAudio = clip
+            cc.audioEngine.play(_this.soundAudio, false, 1)
         })
     },
 
     changeBackgroundMusic(event, data){
+        // 改变BGM，本质是修改id
         this.bgmStop()
         switch(data){
             case "1":
@@ -99,9 +100,11 @@ cc.Class({
                 return;
         }
         this.bgmPlay()
+        // 修改完毕后调用播放函数，加载音频
     },
 
     changeSoundEffect(event, data){
+        // 改变碰撞音效
         switch(data){
             case "1":
                 this.soundAudioId = 1

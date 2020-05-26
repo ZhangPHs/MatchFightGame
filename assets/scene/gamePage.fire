@@ -964,6 +964,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "b5M1q6oBxJyKV6SgetKPyR"
   },
   {
@@ -4561,6 +4562,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "1dWmPsp4NBWZAyQgNsbOWw"
   },
   {
@@ -4774,6 +4776,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "b6UL1I4OtNAamEb69H3Xpj"
   },
   {
@@ -5176,6 +5179,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "58QiHr/zxDZKfMM01WOBsd"
   },
   {
@@ -5310,6 +5314,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "40Bw2cOblNPrtTuIAzYXrB"
   },
   {
@@ -5653,6 +5658,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "d0WIX3K8ZECZQzjLOd5wrg"
   },
   {
@@ -5787,6 +5793,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "caA97x8L5H940K9I7DU5ql"
   },
   {
@@ -5836,6 +5843,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "97k1aC+TxDz7Ht5wjH1UJX"
   },
   {
@@ -6277,6 +6285,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "38dmJnn+tIhq4WP99BSmoU"
   },
   {
@@ -6780,6 +6789,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "e08frjUbhNQrY5EMfL/CyL"
   },
   {
@@ -6914,6 +6924,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "a6d3AB+uxDqYfHmTUZyEcV"
   },
   {
@@ -6941,6 +6952,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "2bpvwIFmRFirHAHDMr31iD"
   },
   {
@@ -7081,6 +7093,7 @@
     "enemyNode": {
       "__id__": 23
     },
+    "flag": true,
     "_id": "20BuFyjqFG079W8ssdga40"
   },
   {
@@ -7385,7 +7398,7 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 255,
+    "_opacity": 0,
     "_color": {
       "__type__": "cc.Color",
       "r": 96,
@@ -7507,7 +7520,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "50b6bc78-911a-4c37-b2d8-7d5e5853bf50"
+      "__uuid__": "da04894a-5729-45c5-b056-ae7d9a78a840"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -8333,15 +8346,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 9,
+      "g": 7,
+      "b": 7,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 97.87,
-      "height": 100
+      "height": 126
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",

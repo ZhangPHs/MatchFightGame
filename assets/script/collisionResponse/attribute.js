@@ -1,10 +1,4 @@
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
+// 此脚本挂载于blackMatchMan节点上，用于记录己方和地方人偶的血量HP
 cc.Class({
     extends: cc.Component,
 
