@@ -1,9 +1,3 @@
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 cc.Class({
     extends: cc.Component,
@@ -23,7 +17,9 @@ cc.Class({
 
         // 只影响定时器的时间间隔
         // cc.director.getScheduler().setTimeScale(0.01);
+
         let _this = this
+        // 注册监听事件，HP归零游戏结束则调用这里的处理函数
         this.node.on("judgeGameOver",function(event){
             let judgeFlag = event.getUserData()
             _this.GameOverControll(judgeFlag)
@@ -33,18 +29,21 @@ cc.Class({
     start () {
     },
 
-    // 当游戏执行时执行的函数
+    // 当游戏结束时执行的函数
     GameOverControll(judgeFlag) {
-        // 游戏暂停，但文本动画也会暂停
-        // cc.director.pause();
+        // 通过传入的参数judgeFlag来判定输赢
         this.gameOverLabel.active = true
         let label  = this.gameOverLabel.getComponent(cc.Label)
-        if(judgeFlag)   label.string = "You Win!"
-        else    label.string = "You Lose!"
+        if(judgeFlag)   {
+            label.string = "You Win!"
+        }
+        else {
+            label.string = "You Lose!"
+        }
         label.schedule(function() {
             label.fontSize += 0.1
-            if(label.fontSize > 99)cc.director.loadScene("homePage")
-        }, 0.5, 100, 0.3)
+            if(label.fontSize > 60)cc.director.loadScene("homePage")
+        }, 0.1, 100, 0.3)
         
     },
 

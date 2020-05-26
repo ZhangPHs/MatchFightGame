@@ -1,29 +1,10 @@
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
+// 绑于敌方的身体部位（头部），用于控制敌人的自主移动
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+        // 分别绑定player和enemy的身体部位，用于识别
         enemyBall: {
             default: null,
             type: cc.Node
@@ -50,6 +31,7 @@ cc.Class({
     },
 
     callback(){
+        // schedule回调函数（cocos自带的schedule定时器）
         if(this.node.getComponent("attribute").HP <= 0)
             this.unschedule(this.callback)
         if(this.flag == true){
@@ -66,14 +48,14 @@ cc.Class({
     },
 
     attack(){
-        
+        // 攻击函数，朝着player施加力的作用
         let enemybody = this.enemyBall.getComponent(cc.RigidBody)
         let epos = enemybody.getWorldPosition()
 
         let playerbody = this.playerBall.getComponent(cc.RigidBody)
         let pos = playerbody.getWorldPosition()
 
-        let ratio = 25
+        let ratio = 15
 
         let dir = cc.v2(pos.x-epos.x, pos.y-epos.y).mulSelf(ratio)
 
@@ -82,21 +64,20 @@ cc.Class({
     },
 
     back(){
+        // 后退函数，远离player
         let enemybody = this.enemyBall.getComponent(cc.RigidBody)
         let epos = enemybody.getWorldPosition()
 
         let playerbody = this.playerBall.getComponent(cc.RigidBody)
         let pos = playerbody.getWorldPosition()
 
-        let ratio = 25
+        let ratio = 15
 
         let dir = cc.v2(epos.x - pos.x, epos.y - pos.y).mulSelf(ratio)
 
         enemybody.applyForce(dir, pos)
 //        console.log("make back")
-    },
-    update (dt) {
+    }
 
-    },
 });
 
