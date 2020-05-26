@@ -35,7 +35,6 @@ cc.Class({
     bgmPlay(){
         // 这里由于回调函数的缘故，掺入了播放功能。
         var file = ""
-        console.log(this.bgmAudioId)
         switch(this.bgmAudioId){
             case 1:
                 file = "bgm/bgm1"
