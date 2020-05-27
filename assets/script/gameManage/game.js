@@ -4,8 +4,6 @@ cc.Class({
 
     properties: {
         gameOverLabel: cc.Node,
-        enemyBlood: cc.Node,
-        enemy: cc.Node,
     },
 
     onLoad () {
