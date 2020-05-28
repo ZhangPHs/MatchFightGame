@@ -195,7 +195,7 @@
       "array": [
         0,
         0,
-        352.52646592800306,
+        209.64812985843807,
         0,
         0,
         0,
@@ -7129,7 +7129,7 @@
       "array": [
         0,
         0,
-        352.52646592800306,
+        209.64812985843807,
         0,
         0,
         0,
@@ -7271,7 +7271,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Sprite(Splash)",
+    "_name": "gamebg",
     "_objFlags": 0,
     "_parent": {
       "__id__": 226
@@ -7350,7 +7350,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "a23235d1-15db-4b95-8439-a2e005bfff91"
+      "__uuid__": "da04894a-5729-45c5-b056-ae7d9a78a840"
     },
     "_type": 0,
     "_sizeMode": 0,
