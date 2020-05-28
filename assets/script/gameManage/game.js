@@ -16,6 +16,19 @@ cc.Class({
         // 只影响定时器的时间间隔
         // cc.director.getScheduler().setTimeScale(0.01);
 
+        //显示两秒的第几关提示label
+        var interval = 0
+        var repeat = 1
+        var delay = 3
+        // console.log(this.node.getChildByName('GameUI').getChildByName('unitTip').getComponent(cc.Label))
+        this.node.getChildByName('GameUI').getChildByName('unitTip').getComponent(cc.Label).string = '第一关'
+        this.schedule(function(){
+            this.node.getChildByName('GameUI').getChildByName('unitTip').getComponent(cc.Label).string = ''
+        }, interval, repeat, delay)
+
+        //动态改变敌人的大小
+        console.log(this.node.getChildByName('blackMatchMan_enemy'))
+        this.node.getChildByName('blackMatchMan_enemy').scale = 1.5
         let _this = this
         // 注册监听事件，HP归零游戏结束则调用这里的处理函数
         this.node.on("judgeGameOver",function(event){
@@ -40,7 +53,7 @@ cc.Class({
         }
         label.schedule(function() {
             label.fontSize += 0.1
-            if(label.fontSize > 60)cc.director.loadScene("homePage")
+            if(label.fontSize > 60)cc.director.loadScene("transitionPage")
         }, 0.1, 100, 0.3)
         
     },
