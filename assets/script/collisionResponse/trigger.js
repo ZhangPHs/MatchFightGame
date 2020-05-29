@@ -11,15 +11,21 @@ cc.Class({
         flag: true,
         bloodEnemy: cc.Node,
         bloodPlayer: cc.Node,
+        bloodEnemyMax: 100,
+        bloodPlayerMax: 100,
+        bloodEnemyLabel: cc.Node,
+        bloodPlayerLabel: cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
+    onLoad () {     
     },
 
     start () {
-
+        this.bloodEnemyMax = this.enemyNode.getComponent("attribute").HP;
+        this.bloodPlayerMax = this.selfNode.getComponent("attribute").HP;
+        this.updateBlood();
     },
 
 
@@ -271,26 +277,21 @@ cc.Class({
         }
     },
 
-    // 实现血条显示和渐隐
-    showBlood(blood, role) {
-        
-        let sprite = blood.getComponent(cc.Sprite);
-        sprite.fillStart = role.getComponent("attribute").HP / 100;
-        
-        let eb = blood;
-        
-        blood.opacity = 255;
-        sprite.schedule(function() {
-            eb.opacity -= 5;
-        }, 0.03, 51);
-    },
-
     updateBlood() {
+        let curEnemyBlood = this.enemyNode.getComponent("attribute").HP >= 0? this.enemyNode.getComponent("attribute").HP : 0;
+        let curPlayerBlood = this.selfNode.getComponent("attribute").HP >= 0? this.selfNode.getComponent("attribute").HP : 0;
+
         let spritePlayer = this.bloodPlayer.getComponent(cc.Sprite);
-        spritePlayer.fillStart = this.selfNode.getComponent("attribute").HP / 100;
+        spritePlayer.fillStart = curPlayerBlood / this.bloodPlayerMax;
 
         let spriteEnemy = this.bloodEnemy.getComponent(cc.Sprite);
-        spriteEnemy.fillStart = this.enemyNode.getComponent("attribute").HP / 100;
+        spriteEnemy.fillStart = curEnemyBlood / this.bloodEnemyMax;
+
+        let labelEnemy = this.bloodEnemyLabel.getComponent(cc.Label);
+        labelEnemy.string = "Boss " + curEnemyBlood + " / " + this.bloodEnemyMax;
+
+        let labelPlayer = this.bloodPlayerLabel.getComponent(cc.Label);
+        labelPlayer.string = "Player " + curPlayerBlood + " / " + this.bloodPlayerMax;
     }
 
     // update (dt) {},
