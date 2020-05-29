@@ -8,7 +8,9 @@ cc.Class({
     properties: {
         selfNode : cc.Node,
         enemyNode : cc.Node,
-        flag: true
+        flag: true,
+        bloodEnemy: cc.Node,
+        bloodPlayer: cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -108,9 +110,11 @@ cc.Class({
                             break;
                     }
                     break;
+                    
             }
         }
         this.gameoverTrigger()
+        this.updateBlood()
     },
 
     // 两个头相撞
@@ -268,17 +272,26 @@ cc.Class({
     },
 
     // 实现血条显示和渐隐
-    showBlood() {
-        let sprite = this.enemyBlood.getComponent(cc.Sprite);
-        sprite.fillStart = this.enemy.getComponent("attribute").HP / 100;
+    showBlood(blood, role) {
         
-        let eb = this.enemyBlood;
+        let sprite = blood.getComponent(cc.Sprite);
+        sprite.fillStart = role.getComponent("attribute").HP / 100;
         
-        this.enemyBlood.opacity = 255;
+        let eb = blood;
+        
+        blood.opacity = 255;
         sprite.schedule(function() {
             eb.opacity -= 5;
         }, 0.03, 51);
     },
+
+    updateBlood() {
+        let spritePlayer = this.bloodPlayer.getComponent(cc.Sprite);
+        spritePlayer.fillStart = this.selfNode.getComponent("attribute").HP / 100;
+
+        let spriteEnemy = this.bloodEnemy.getComponent(cc.Sprite);
+        spriteEnemy.fillStart = this.enemyNode.getComponent("attribute").HP / 100;
+    }
 
     // update (dt) {},
 });
