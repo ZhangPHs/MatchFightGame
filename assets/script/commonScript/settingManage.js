@@ -3,8 +3,9 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        difficulty: 1
-        
+        difficulty: 1,//游戏难度
+        unit: 1,//关卡数
+        continue_game: true,//是否可以继续闯关
     },
 
     onLoad () {

@@ -195,7 +195,7 @@
       "array": [
         0,
         0,
-        209.64812985843807,
+        209.64585942075544,
         0,
         0,
         0,
@@ -7129,7 +7129,7 @@
       "array": [
         0,
         0,
-        209.64812985843807,
+        209.64585942075544,
         0,
         0,
         0,
@@ -7609,7 +7609,7 @@
     "_density": 1,
     "_sensor": false,
     "_friction": 0.2,
-    "_restitution": 2,
+    "_restitution": 0.5,
     "body": null,
     "_offset": {
       "__type__": "cc.Vec2",
@@ -7773,7 +7773,7 @@
     "_density": 1,
     "_sensor": false,
     "_friction": 0.2,
-    "_restitution": 2,
+    "_restitution": 0.5,
     "body": null,
     "_offset": {
       "__type__": "cc.Vec2",
@@ -7937,7 +7937,7 @@
     "_density": 1,
     "_sensor": false,
     "_friction": 0.2,
-    "_restitution": 2,
+    "_restitution": 0.5,
     "body": null,
     "_offset": {
       "__type__": "cc.Vec2",

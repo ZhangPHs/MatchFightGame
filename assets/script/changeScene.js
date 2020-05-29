@@ -44,6 +44,7 @@ cc.Class({
     },
 
     to_next_unit: function () {
+        cc.find('dataN').getComponent('settingManage').unit += 1
         cc.director.loadScene("gamePage")
     }
 });
