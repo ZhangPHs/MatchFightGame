@@ -20,6 +20,8 @@ cc.Class({
             //游戏继续
             //渲染恭喜的提示信息
             this.node.getChildByName('tip').getComponent(cc.Label).string = '恭喜，闯关成功'
+            cc.find('dataN').getComponent('settingManage').score += cc.find('dataN').getComponent('settingManage').unit * 10000 + cc.find('dataN').getComponent('settingManage').difficulty * 20000
+            console.log(cc.find('dataN').getComponent('settingManage').score)
         }
     },
 

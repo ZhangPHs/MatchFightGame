@@ -11,7 +11,9 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        this.refreshRanking()
+    },
 
     showRanking () {
         let updateTime = parseInt(new Date().getTime() / 1000);
@@ -39,10 +41,12 @@ cc.Class({
         let updateTime = parseInt(new Date().getTime() / 1000);
         let _value = JSON.stringify({
             "wxgame": {
-                "score": Math.floor(10000 * Math.random()),
+                "score": cc.find('dataN').getComponent('settingManage').score,
                 "update_time": updateTime
             }
         });
+        console.log(_value)
+        console.log('sendMsgToOpenData')
 
         let arr = new Array();
         arr.push({key: "score", value: _value});

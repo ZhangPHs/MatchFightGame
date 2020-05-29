@@ -59,6 +59,7 @@ cc.Class({
         let label = this.gameOverLabel.getComponent(cc.Label)
         if (judgeFlag) {
             label.string = "You Win!"
+            cc.find('dataN').getComponent('settingManage').continue_game = true
         }
         else {
             label.string = "You Lose!"

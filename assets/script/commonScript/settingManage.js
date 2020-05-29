@@ -6,6 +6,7 @@ cc.Class({
         difficulty: 1,//游戏难度
         unit: 1,//关卡数
         continue_game: true,//是否可以继续闯关
+        score: 0,//存储这次游戏的分数
     },
 
     onLoad () {
