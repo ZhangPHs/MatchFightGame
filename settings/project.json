@@ -20,7 +20,7 @@
     [
       false,
       true,
-      true,
+      false,
       null,
       true
     ],
@@ -35,7 +35,7 @@
       true,
       true,
       false,
-      true
+      false
     ]
   ],
   "excluded-modules": [
@@ -106,6 +106,5 @@
   },
   "migrate-history": [
     "cloud-function"
-  ],
-  "start-scene": "current"
+  ]
 }
