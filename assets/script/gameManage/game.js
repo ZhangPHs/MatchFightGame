@@ -45,8 +45,8 @@ cc.Class({
         }, interval, repeat, delay)
 
         //动态改变敌人的大小，随着关卡数的增加，地方大小变大
-        console.log(this.node.getChildByName('blackMatchMan_enemy'))
-        this.node.getChildByName('blackMatchMan_enemy').scaleY = 1 + difficulty * 0.3 + unit * 0.2
+        // console.log(this.node.getChildByName('blackMatchMan_enemy'))
+        // this.node.getChildByName('blackMatchMan_enemy').scaleY = 1 + difficulty * 0.3 + unit * 0.2
         let _this = this
         // 注册监听事件，HP归零游戏结束则调用这里的处理函数
         this.node.on("judgeGameOver", function (event) {
