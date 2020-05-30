@@ -16,6 +16,12 @@ cc.Class({
         // 只影响定时器的时间间隔
         // cc.director.getScheduler().setTimeScale(0.01);
 
+        //判断当前难度.
+        let diff = cc.find('dataN').getComponent('settingManage').difficulty
+        let blocksN = this.node.getChildByName('bg').getChildByName('blocks')
+        if(diff == 2) blocksN.active = true
+        else blocksN.active = false
+
         //获取当前的关卡数
         var unit = cc.find('dataN').getComponent('settingManage').unit
         var difficulty = cc.find('dataN').getComponent('settingManage').difficulty
@@ -50,6 +56,7 @@ cc.Class({
     },
 
     start() {
+        
     },
 
     // 当游戏结束时执行的函数

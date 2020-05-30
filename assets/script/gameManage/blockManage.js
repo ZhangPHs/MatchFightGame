@@ -62,8 +62,9 @@ cc.Class({
         cc.tween(node)
             .repeatForever(
                 cc.tween()
-                    .by(1, {scale: 1, angle: 360 })
-                    .by(1, {scale: -1, angle: -360 })
+                    .by(1, {scale: 0.5, angle: 360 })
+                    .by(1, {scale: -1, angle: 360 })
+                    .by(1, {scale: 0.5, angle: -360 })
             )
             .start()
     }
