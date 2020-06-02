@@ -53,6 +53,8 @@ cc.Class({
             let judgeFlag = event.getUserData()
             _this.GameOverControll(judgeFlag)
         })
+
+        cc.find('dataN').getComponent('settingManage').gameOver = false;
     },
 
     start() {
