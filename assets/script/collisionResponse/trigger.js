@@ -29,7 +29,13 @@ cc.Class({
     },
 
 
-    onBeginContact (contact, selfCollider, otherCollider) {        
+    onBeginContact (contact, selfCollider, otherCollider) { 
+        // 判断游戏是否结束，结束则返回
+        if (cc.find('dataN').getComponent('settingManage').gameOver) {
+            this.gameoverTrigger()
+            return;
+        }
+        
         //该函数为刚体与刚体碰撞时调用，参数为己方刚体和地方刚体  
         //不同部位碰撞有不同反馈  
         if(otherCollider.node.group == "enemy"){
