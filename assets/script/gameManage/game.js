@@ -62,6 +62,7 @@ cc.Class({
     // 当游戏结束时执行的函数
     GameOverControll(judgeFlag) {
         // 通过传入的参数judgeFlag来判定输赢
+        cc.find('dataN').getComponent('settingManage').gameOver = true
         this.gameOverLabel.active = true
         let label = this.gameOverLabel.getComponent(cc.Label)
         if (judgeFlag) {
@@ -76,21 +77,7 @@ cc.Class({
             label.fontSize += 0.1
             if (label.fontSize > 60) cc.director.loadScene("transitionPage")
         }, 0.1, 100, 0.3)
-
     },
-
-    // // 实现血条显示和渐隐
-    // showBlood() {
-    //     let sprite = this.enemyBlood.getComponent(cc.Sprite);
-    //     sprite.fillStart = this.enemy.getComponent("attribute").HP / 100;
-
-    //     let eb = this.enemyBlood;
-
-    //     this.enemyBlood.opacity = 255;
-    //     sprite.schedule(function() {
-    //         eb.opacity -= 5;
-    //     }, 0.03, 51);
-    // },
 
     // update (dt) {},
 });

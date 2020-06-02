@@ -7,6 +7,7 @@ cc.Class({
         unit: 1,//关卡数
         continue_game: true,//是否可以继续闯关
         score: 0,//存储这次游戏的分数
+        gameOver: false, // 判断游戏是否结束
     },
 
     onLoad () {
