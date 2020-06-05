@@ -12,6 +12,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
+        // console.log(this.subContextView)
         this.refreshRanking()
     },
 
@@ -26,13 +27,13 @@ cc.Class({
             data: getArr,
             timer: updateTime
         });
-        this.subContextView.enabled = true;
+        // this.subContextView.enabled = true;
         this.WXSubContextView.active = true;
-        this.subContextView.update();
+        // this.subContextView.update();
     },
 
     hideRanking () {
-        this.subContextView.enabled = false;
+        // this.subContextView.enabled = false;
         this.WXSubContextView.active = false;
     },
 
@@ -67,8 +68,8 @@ cc.Class({
     },
 
     start () {
-        this.subContextView = this.WXSubContextView.getComponent(cc.WXSubContextView);
-        this.subContextView.enabled = false;
+        // this.subContextView = this.WXSubContextView.getComponent(cc.WXSubContextView);
+        // this.subContextView.enabled = false;
         this.WXSubContextView.active = false;
     },
 

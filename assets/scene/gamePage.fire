@@ -195,7 +195,7 @@
       "array": [
         692.521,
         221.666,
-        525.8956763333549,
+        554.2562584220408,
         0,
         0,
         0,
@@ -4739,8 +4739,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 40
+      "width": 200,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4751,7 +4751,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -384.6,
+        -353.457,
         238.627,
         0,
         0,
@@ -4808,8 +4808,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 40
+      "width": 200,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4871,7 +4871,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 160,
-      "height": 50.4
+      "height": 100.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4924,7 +4924,7 @@
     "_string": "返回主页",
     "_N$string": "返回主页",
     "_fontSize": 40,
-    "_lineHeight": 40,
+    "_lineHeight": 80,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -4955,7 +4955,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "f54f5c3c-6c42-411f-b789-ad5c4a3aeb98"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -5064,22 +5064,22 @@
       "a": 200
     },
     "_N$normalSprite": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "f54f5c3c-6c42-411f-b789-ad5c4a3aeb98"
     },
     "_N$pressedSprite": {
-      "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
+      "__uuid__": "afc6fe70-ab18-48cd-9342-a4070e9d94fd"
     },
     "pressedSprite": {
-      "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
+      "__uuid__": "afc6fe70-ab18-48cd-9342-a4070e9d94fd"
     },
     "_N$hoverSprite": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "f54f5c3c-6c42-411f-b789-ad5c4a3aeb98"
     },
     "hoverSprite": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "f54f5c3c-6c42-411f-b789-ad5c4a3aeb98"
     },
     "_N$disabledSprite": {
-      "__uuid__": "29158224-f8dd-4661-a796-1ffab537140e"
+      "__uuid__": "f54f5c3c-6c42-411f-b789-ad5c4a3aeb98"
     },
     "_N$target": {
       "__id__": 137
@@ -9170,7 +9170,7 @@
       "array": [
         0,
         0,
-        525.8956763333549,
+        554.2562584220408,
         0,
         0,
         0,
